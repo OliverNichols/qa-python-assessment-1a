@@ -227,6 +227,14 @@ def seven(input):
     # <HINT>
 
     # You may need to create a list of numbers from 0 to i, take a look at help(range).
+
+
+    def eight(input):
+      for i in range(1, 7):
+      return(n * i, end="   ")
+    return()
+
+
     # <QUESTION 9>
 
     # Given a string and a char, returns the position in the String where the char first appears.
