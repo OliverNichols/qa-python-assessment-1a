@@ -1,21 +1,3 @@
-    # INSTRUCTIONS
-
-    # In case it is not clear, the Question appears first, then examples, then any hints and finally the function that you need to complete appears underneath:
-
-    # <QUESTION>
-
-    # <EXAMPLES>
-
-    # <HINT>
-
-    # You are allowed access to the internet for this assessment, or you could use the DOCUMENTATION that comes bundled with your Python installation.  You should already be comfortable accessing this documentation, but to summarise:
-
-    # Access Python from you CLI
-
-    # Type help() or for example help(str)
-
-
-
     # <QUESTION 1>
 
     # Define a function that can accept two strings as input and returns the string with maximum length to the console. 
@@ -123,8 +105,13 @@ def three(arg1):
     # help(int) for working with numbers and help(str) for working with Strings.
 
 def four(arg1):
-    pass
+    four = 0
+    for x in arg1:
+        if x.isdigit() == True:
+            z = int(x)
+            four = four + z
 
+    return four
 
     # <QUESTION 5>
 
@@ -227,12 +214,6 @@ def seven(input):
     # <HINT>
 
     # You may need to create a list of numbers from 0 to i, take a look at help(range).
-
-def eight(input):
-    for i in range(1, 10):
-    return(n * i, end=" ")
-
-
 
     # <QUESTION 9>
 
