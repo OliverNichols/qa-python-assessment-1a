@@ -35,14 +35,15 @@
     # What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-    if input1 > input2 :
+
+    if len(str(input1)) > len(str(input2)) :
        return (input1)
 
-    elif input2 > input1:
+    elif len(str(input1)) > len(str(input2)):
        return (input2)
 
-    else :
-       return(input1) + (input2)
+    else:
+       return (input1) (" ") (input2)
 
     # <QUESTION 2>
 
@@ -67,8 +68,7 @@ def one(input1, input2):
     # Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def two(input):
-    pass
-
+    return input(word.lower.split('bert', 1))
 
     # <QUESTION 3>
 
@@ -227,11 +227,6 @@ def seven(input):
     # <HINT>
 
     # You may need to create a list of numbers from 0 to i, take a look at help(range).
-
-def eight(input):
-    pass
-
-
     # <QUESTION 9>
 
     # Given a string and a char, returns the position in the String where the char first appears.
