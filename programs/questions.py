@@ -199,8 +199,18 @@ def six(input):
 
     # How do we ignore case in a String? help(str) may offer some insight.
 
+
+def vowel():
+    return input.lower() in ['a', 'e', 'i', 'o', 'u']
+
 def seven(input):
-    pass
+    count = 0
+    for i in range(len(str)):
+        if vowel(str[i]):
+            count += 1
+    return count
+ 
+    
 
 
     # <QUESTION 8>
