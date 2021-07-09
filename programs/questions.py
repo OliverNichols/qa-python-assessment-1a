@@ -68,7 +68,7 @@ def one(input1, input2):
     # Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def two(input):
-    return input(word.lower.split('bert', 1))
+    return input(word.lower.split('bert'))
 
     # <QUESTION 3>
 
@@ -91,14 +91,14 @@ def two(input):
 
 def three(arg1):
     if arg1 % 3 == 0 and arg1 % 5 == 0:
-        result += "FizzBuzz"
-        return(arg1, result)
+        result1 = "FizzBuzz"
+        return(arg1, result1)
     elif arg1 % 3 == 0:
-        result += "Fizz"
-        return(arg1, result)
+        result2 = "Fizz"
+        return(arg1, result2)
     elif arg1 % 5 == 0:
-        result += "Buzz"
-        return(arg1, result)
+        result3 = "Buzz"
+        return(arg1, result3)
 
     # <QUESTION 4>
 
@@ -228,11 +228,10 @@ def seven(input):
 
     # You may need to create a list of numbers from 0 to i, take a look at help(range).
 
+def eight(input):
+    for i in range(1, 10):
+    return(n * i, end=" ")
 
-    def eight(input):
-      for i in range(1, 7):
-      return(n * i, end="   ")
-    return()
 
 
     # <QUESTION 9>
