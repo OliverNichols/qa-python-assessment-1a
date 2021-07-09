@@ -213,6 +213,11 @@ def seven(input):
 
     # <HINT>
 
+def eight(input)
+    for range (1, 10)
+    (int(input))
+    ################## I've no time to finish this, but I get multiplying it by range
+
     # You may need to create a list of numbers from 0 to i, take a look at help(range).
 
     # <QUESTION 9>
