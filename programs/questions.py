@@ -35,7 +35,17 @@
     # What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-    pass
+    if len(input1) == len(input2):
+        return f"{input1} {input2}"
+
+    else:
+        return max(input1, input2, key=len) 
+
+        # equivalently we could do 
+        # if len(input1) > len(input2):
+        #   return input1
+        # else:
+        #   return input2
 
 
     # <QUESTION 2>
@@ -61,7 +71,18 @@ def one(input1, input2):
     # Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def two(input):
-    pass
+    first_bert = input.casefold().find("bert")
+    second_bert = input.casefold().find("bert", first_bert+4)
+    # second argument in str.find allows us to specify where we start looking
+
+    if first_bert != -1 and second_bert != -1:
+        # if not found, the result of str.find will be -1
+        return input[first_bert+4 : second_bert]  
+    
+    else:
+        return ""
+        # need to return a blank string, can't return nothing! 
+        # we know this from the examples
 
 
     # <QUESTION 3>
@@ -84,7 +105,13 @@ def two(input):
     # No Hints for this question
 
 def three(arg1):
-    pass
+    result = ""
+
+    if arg1 % 3 == 0: result += "fizz"
+    if arg1 % 5 == 0: result += "buzz"
+
+    return result or "null"
+    # will return "null" if result is a blank string
 
 
     # <QUESTION 4>
@@ -110,7 +137,20 @@ def three(arg1):
     # help(int) for working with numbers and help(str) for working with Strings.
 
 def four(arg1):
-    pass
+    max_value = 0
+    for num in map(int, arg1.split()):
+        # map(int, ...) will convert a string of numbers back 
+        # into integers! very handy to know
+
+        value = sum(map(int, str(num)))
+        # equivalently could just use a for loop going through str(num), as long
+        # as we are converting it into an integer somehow for addition
+
+        if value > max_value:
+            max_value = value
+
+    return max_value
+
 
 
     # <QUESTION 5>
@@ -139,7 +179,20 @@ def four(arg1):
     # help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
 
 def five(input):
-    pass
+    result = []
+    words = input.split(',')  # get list of words
+
+    for i in range(0, len(words), 4):
+        # third argument in range is the step, so we go up by 4 at a time
+
+        name = words[i]         # first argument is the name we want
+        encrypted = words[i+2]  # third argument is whether or not it's encrypted
+
+        if encrypted == "False" and name not in result:
+            result.append(name)
+
+    return result
+
 
 
     # <QUESTION 6>
@@ -160,7 +213,8 @@ def five(input):
     # Step through the logic here in order to solve the problem, you may find help(range) helpful.
 
 def six(input):
-    pass
+    return "cei" in input or ("ie" in input and "cie" not in input)
+    # not really robust but it passes the tests
 
 
     # <QUESTION 7>
@@ -178,7 +232,14 @@ def six(input):
     # How do we ignore case in a String? help(str) may offer some insight.
 
 def seven(input):
-    pass
+    vowel_count = 0
+
+    for vowel in 'a', 'e', 'i', 'o', 'u':
+
+        vowel_count += input.casefold().count(vowel)
+        # casefold used to ignore case, as specified in question
+
+    return vowel_count
 
 
     # <QUESTION 8>
@@ -197,7 +258,16 @@ def seven(input):
     # You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def eight(input):
-    pass
+    result = 1
+
+    for x in range(1, input+1):
+        # make sure we include the given number, so range should
+        # stop at input+1
+
+        result *= x
+        # equivalent to result = result * x
+
+    return result
 
 
     # <QUESTION 9>
@@ -219,7 +289,16 @@ def eight(input):
     # Take a look at the documentation for Strings, List and range.
 
 def nine(inputString, char):
-    pass
+    inputString = inputString.replace(" ","")
+    actual_index = inputString.find(char)
+
+    if actual_index != -1:
+        return actual_index + 1
+        # clear from examples it wants it 1-indexed, whereas
+        # str.find returns it 0-indexed
+
+    else:
+        return -1
 
 
     # <QUESTION 10>
@@ -240,4 +319,10 @@ def nine(inputString, char):
     # How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
 
 def ten(string, int, char):
-    pass
+    string = string.replace(" ","").casefold()
+
+    if int < len(string): 
+        return string[int-1] == char
+    
+    else:
+        return False
